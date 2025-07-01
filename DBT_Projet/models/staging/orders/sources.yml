@@ -5,5 +5,4 @@ sources:
       schema: my_dbt_db
 
       tables:
-        - name: raw_customers
-        
+        - name: raw_orders
