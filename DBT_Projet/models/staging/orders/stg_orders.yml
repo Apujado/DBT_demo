@@ -2,21 +2,26 @@ version: 2
 
 models:
     - name: stg_orders
+      description: Order data with basic cleaning and transformation applied.
       columns:
         - name: order_id
+          description: Orders non null and unique identifier
           tests:
             - not_null
             - unique
         - name: customer_id
+          description: The unique key for each customer
           tests:
             - not_null
             - relationships:
                 to: ref('stg_customers')
                 field: customer_id
         - name: order_date_timestamp
+          description: The timestamp and date of the order.
           tests:
             - not_null
         - name: store_id
+          description: "{{ doc('store_id_description') }}"
           tests:
             - not_null
       
